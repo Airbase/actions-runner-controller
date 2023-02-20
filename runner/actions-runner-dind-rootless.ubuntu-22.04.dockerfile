@@ -31,6 +31,16 @@ RUN apt-get update -y \
     uidmap \
     unzip \
     zip \
+    libpq-dev \
+    libxml2-dev \
+    libxmlsec1-dev \
+    build-essential \
+    nghttp2 \
+    libnghttp2-dev \
+    libssl-dev \
+    gnutls-bin \
+    libpangocairo-1.0-0 \
+    libmagickwand-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Runner user
