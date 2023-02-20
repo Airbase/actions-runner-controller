@@ -36,8 +36,6 @@ RUN apt-get update -y \
     libssl-dev \
     gnutls-bin \
     libpangocairo-1.0-0 \
-    libmagickwand-dev \
-    libmagic-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Runner user
