@@ -37,6 +37,7 @@ RUN apt-get update -y \
     gnutls-bin \
     libpangocairo-1.0-0 \
     libmagickwand-dev \
+    libmagic-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Runner user
