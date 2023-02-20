@@ -1,7 +1,7 @@
 FROM ubuntu:22.04
 
-ARG TARGETPLATFORM
-ARG RUNNER_VERSION
+ARG TARGETPLATFORM=linux/x86_64
+ARG RUNNER_VERSION=2.302.1
 ARG RUNNER_CONTAINER_HOOKS_VERSION=0.2.0
 # Docker and Docker Compose arguments
 ARG CHANNEL=stable
@@ -27,6 +27,16 @@ RUN apt-get update -y \
     sudo \
     unzip \
     zip \
+    libpq-dev \
+    libxml2-dev \
+    libxmlsec1-dev \
+    build-essential \
+    nghttp2 \
+    libnghttp2-dev \
+    libssl-dev \
+    gnutls-bin \
+    libpangocairo-1.0-0 \
+    libmagickwand-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Runner user
