@@ -41,7 +41,7 @@ RUN apt-get update -y \
 
 RUN cd /tmp/ \
     && wget https://bootstrap.pypa.io/get-pip.py \
-    && python get-pip.py
+    && python3 get-pip.py
 
 # Runner user
 RUN adduser --disabled-password --gecos "" --uid $RUNNER_USER_UID runner \
