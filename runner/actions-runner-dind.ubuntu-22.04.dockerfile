@@ -38,6 +38,10 @@ RUN apt-get update -y \
     libpangocairo-1.0-0 \
     && rm -rf /var/lib/apt/lists/*
 
+RUN cd /tmp/ \
+    && wget https://bootstrap.pypa.io/get-pip.py \
+    && python get-pip.py
+
 # Runner user
 RUN adduser --disabled-password --gecos "" --uid $RUNNER_USER_UID runner \
     && groupadd docker --gid $DOCKER_GROUP_GID \
