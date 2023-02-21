@@ -42,7 +42,7 @@ RUN apt-get update -y \
 RUN cd /tmp/ \
     && wget https://bootstrap.pypa.io/get-pip.py \
     && python3 get-pip.py \
-    && echo "alias pip='pip3'" >> ~/.bashrc
+    && echo "alias pip='pip3'" >> ~/.bashrc 
 
 # Runner user
 RUN adduser --disabled-password --gecos "" --uid $RUNNER_USER_UID runner \
@@ -123,6 +123,8 @@ RUN echo "PATH=${PATH}" > /etc/environment \
 
 # No group definition, as that makes it harder to run docker.
 USER runner
+
+RUN echo "USER=runner" >> ~/.bashrc
 
 ENTRYPOINT ["/bin/bash", "-c"]
 CMD ["entrypoint-dind.sh"]
